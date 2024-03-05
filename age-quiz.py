@@ -15,9 +15,14 @@ age = int(input("Please enter your age: "))
 # and not need to output the next two.
 
 # Open the file in read mode
-with open('driver.txt', 'r') as file:
-    # Read the age from the file
-    age = int(file.read().strip())
+with open('/Users/charmainefernandes/Documents/Documents/Cogrammar/CF23100010231/Data Science (Fundamentals)/T23 - Version Control and Git/Projects/Easiest Age calculator/age-quiz/drivers.txt', 'r') as file:
+    # Read the drivers from the file
+    drivers = file.readlines()
+
+# Process each line (assuming each line contains information about a driver)
+for driver_info in drivers:
+    # Process driver_info as needed
+    print(driver_info.strip())  # For example, printing each line
 
 
 if age > 100:
