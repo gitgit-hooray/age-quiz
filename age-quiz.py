@@ -14,6 +14,12 @@ age = int(input("Please enter your age: "))
 # so the flow of logic would output the first conditional 
 # and not need to output the next two.
 
+# Open the file in read mode
+with open('driver.txt', 'r') as file:
+    # Read the age from the file
+    age = int(file.read().strip())
+
+
 if age > 100:
     print("Sorry, you're dead.")
 elif age >= 65:
