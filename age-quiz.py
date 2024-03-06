@@ -27,8 +27,10 @@ elif age == 21:
 else:
     print("Age is but a number.")
 
-"""This is an alternative code 
-with an if statement nested within another if statement"""
+"""This is an alternative code
+with an if statement nested within another
+if statement and while loop allowing user to keep
+entering age until '-1' is entered to exit."""
 
 while True:
     age = int(input("Please enter your age or '-1' to exit: "))
