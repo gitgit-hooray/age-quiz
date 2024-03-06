@@ -41,22 +41,26 @@ elif age == 21:
 else:
     print("Age is but a number.")
 
-"""This is an alternative code 
-with an if statement nested within another if statement"""
+"""This is an alternative code
+with an if statement nested within another
+if statement and while loop allowing user to keep
+entering age until '-1' is entered to exit."""
 
-age = int(input("Please enter your age: "))
-
-if age >= 40:
-    if age >= 65 and age <= 100 :
-        print("Enjoy your retirement!")
-    elif age > 100:
-        print("Sorry, you're dead.")
+while True:
+    age = int(input("Please enter your age or '-1' to exit: "))
+    if age >= 40:
+        if age >= 65 and age <= 100 :
+            print("Enjoy your retirement!")
+        elif age > 100:
+            print("Sorry, you're dead.")
+        else:
+            print("You're over the hill.")
+    elif age < 13 and age != -1:
+        print("You qualify for the kiddie discount.")
+    elif age == 21:
+        print("Congrats on your 21st!")
+    elif age == -1:
+        print("Thank you for using the age quiz.")
+        break
     else:
-        print("You're over the hill.")
-elif age < 13:
-    print("You qualify for the kiddie discount.")
-elif age == 21:
-    print("Congrats on your 21st!")
-else:
-    print("Age is but a number.")
-    
+        print("Age is but a number.")
