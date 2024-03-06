@@ -47,20 +47,24 @@ if statement and while loop allowing user to keep
 entering age until '-1' is entered to exit."""
 
 while True:
-    age = int(input("Please enter your age or '-1' to exit: "))
-    if age >= 40:
-        if age >= 65 and age <= 100 :
-            print("Enjoy your retirement!")
-        elif age > 100:
-            print("Sorry, you're dead.")
+    # Exception handling added if user doesn't enter a valid number.
+    try:
+        age = int(input("Please enter your age or '-1' to exit: "))
+        if age >= 40:
+            if age >= 65 and age <= 100 :
+                print("Enjoy your retirement!")
+            elif age > 100:
+                print("Sorry, you're dead.")
+            else:
+                print("You're over the hill.")
+        elif age < 13 and age != -1:
+            print("You qualify for the kiddie discount.")
+        elif age == 21:
+            print("Congrats on your 21st!")
+        elif age == -1:
+            print("Thank you for using the age quiz.")
+            break
         else:
-            print("You're over the hill.")
-    elif age < 13 and age != -1:
-        print("You qualify for the kiddie discount.")
-    elif age == 21:
-        print("Congrats on your 21st!")
-    elif age == -1:
-        print("Thank you for using the age quiz.")
-        break
-    else:
-        print("Age is but a number.")
+            print("Age is but a number.")
+    except ValueError:
+        print("Error: Please enter a valid digit. Non-digit characters are not allowed.")
